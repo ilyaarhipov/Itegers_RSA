@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <LangVersion>9</LangVersion>
+        <AssemblyName>Library</AssemblyName>
+        <RootNamespace>Library</RootNamespace>
+    </PropertyGroup>
+
+</Project>

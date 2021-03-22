@@ -1,0 +1,9 @@
+C:\Users\dns\Desktop\Integers-main\Integers-main\Integers\Core\bin\Debug\netcoreapp3.1\Library.deps.json
+C:\Users\dns\Desktop\Integers-main\Integers-main\Integers\Core\bin\Debug\netcoreapp3.1\Library.dll
+C:\Users\dns\Desktop\Integers-main\Integers-main\Integers\Core\bin\Debug\netcoreapp3.1\Library.pdb
+C:\Users\dns\Desktop\Integers-main\Integers-main\Integers\Core\obj\Debug\netcoreapp3.1\Core.csprojAssemblyReference.cache
+C:\Users\dns\Desktop\Integers-main\Integers-main\Integers\Core\obj\Debug\netcoreapp3.1\Core.AssemblyInfoInputs.cache
+C:\Users\dns\Desktop\Integers-main\Integers-main\Integers\Core\obj\Debug\netcoreapp3.1\Core.AssemblyInfo.cs
+C:\Users\dns\Desktop\Integers-main\Integers-main\Integers\Core\obj\Debug\netcoreapp3.1\Core.csproj.CoreCompileInputs.cache
+C:\Users\dns\Desktop\Integers-main\Integers-main\Integers\Core\obj\Debug\netcoreapp3.1\Library.dll
+C:\Users\dns\Desktop\Integers-main\Integers-main\Integers\Core\obj\Debug\netcoreapp3.1\Library.pdb
