@@ -41,9 +41,9 @@ namespace Integers
             }
             else Sign = Sign.Plus;
 
-            foreach (var c in s.Reverse())
+            foreach (var e in s.Reverse())
             {
-                digits.Add(Convert.ToByte(c.ToString()));
+                digits.Add(Convert.ToByte(e.ToString()));
             }
 
             RemoveNulls();
