@@ -132,17 +132,18 @@ namespace Integers
         private static Integer Add(Integer a, Integer b)
         {
             var digits = new List<byte>();
+            var lower = 0;
             var maxLength = Math.Max(a.Size, b.Size);
-            var reduce = 0;
+            
             for (var i = 0; i < maxLength; i++)
             {
-                var sum = (byte) (a.GetByte(i) + b.GetByte(i) + reduce);
-                reduce = sum / 10;
+                var sum = (byte) (a.GetByte(i) + b.GetByte(i) + lower);
+                lower = sum / 10;
                 digits.Add((byte) (sum % 10));
             }
 
-            if (reduce > 0)
-                digits.Add((byte) reduce);
+            if (lower > 0)
+                digits.Add((byte) lower);
 
             return new Integer(a.Sign, digits);
         }
