@@ -224,8 +224,8 @@ namespace Integers
                 while (left <= right)
                 {
                     var middle = (left + right) / 2;
-                    var cur = b * Exp((byte) middle, i);
-                    if (cur <= current)
+                    var c = b * Exp((byte) middle, i);
+                    if (c <= current)
                     {
                         x = middle;
                         left = middle + 1;
@@ -286,16 +286,16 @@ namespace Integers
         {
             var binaryValue = ConvertToBinary(power);
 
-            var arr = new Integer[binaryValue.Count];
-            arr[0] = value;
+            var a = new Integer[binaryValue.Count];
+            a[0] = value;
             for (var i = 1; i < binaryValue.Count; i++)
-                arr[i] = arr[i - 1] * arr[i - 1] % module;
+                a[i] = a[i - 1] * a[i - 1] % module;
 
             var multiplication = One;
             var zero = Zero;
             for (var j = 0; j < binaryValue.Count; j++)
                 if (binaryValue[j] > zero)
-                    multiplication *= binaryValue[j] * arr[j];
+                    multiplication *= binaryValue[j] * a[j];
 
             return multiplication % module;
         }
@@ -312,6 +312,30 @@ namespace Integers
             var b = Pow(value, power / two);
             return b * b;
         }
+        
+        public static Integer InverseInModulo(Integer a, Integer n)
+        {
+            var aea = AdvancedEuclidAlgorithm(a, n, out var x, out var _);
+            if (aea != One)
+                return Zero;
+            return (x % n + n) % n;
+        }
+        
+        public static Integer AdvancedEuclidAlgorithm(Integer number, Integer modulo, out Integer x,
+                                                    out Integer y)
+        {
+            if (number.IsZero)
+            {
+                x = Zero;
+                y = One;
+                return modulo;
+            }
+
+            var d = AdvancedEuclidAlgorithm(modulo % number, number, out var x1, out var y1);
+            x = y1 - (modulo / number) * x1;
+            y = x1;
+            return d;
+        }
 
         private static List<Integer> ConvertToBinary(Integer value)
         {
@@ -325,30 +349,6 @@ namespace Integers
             }
 
             return result;
-        }
-
-        public static Integer GetModInverse(Integer a, Integer n)
-        {
-            var gdc = GreatestCommonDivisor(a, n, out var x, out var _);
-            if (gdc != One)
-                return Zero;
-            return (x % n + n) % n;
-        }
-
-        public static Integer GreatestCommonDivisor(Integer number, Integer modulo, out Integer x,
-                                                    out Integer y)
-        {
-            if (number.IsZero)
-            {
-                x = Zero;
-                y = One;
-                return modulo;
-            }
-
-            var d = GreatestCommonDivisor(modulo % number, number, out var x1, out var y1);
-            x = y1 - (modulo / number) * x1;
-            y = x1;
-            return d;
         }
 
         private static int Comparison(Integer a, Integer b, bool ignoreSign = false)
